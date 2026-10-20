@@ -14,6 +14,31 @@ error
 mensaje de error: Biblioteca.java:30: error: titulo has private access in Libro
         System.out.println(l1.titulo);^
 
+RETO 1
+Libro a = new Libro("Ficciones", "Borges");  // objeto A
+Libro b = new Libro("Ficciones", "Borges");  // objeto B
+Libro c = a;                                 // c apunta a A
+c.prestar();                                 // A queda no disponible
+a = b;                                       // a ahora apunta a B
+
+
+RETO 2
+public void devolverLibro(Libro libro) {
+    if (libro == null) {
+        System.out.println("No hay libro para devolver");
+    } else if (librosPrestados > 0) {
+        libro.devolver();
+        librosPrestados--;
+    }
+}
+
+
+RETO 3
+public boolean mismoTitulo(Libro otro) {
+    return otro != null && titulo.equals(otro.titulo);
+}
+
+
 1. ¿Qué guarda una variable int y qué guarda una variable Libro?
 Un int guarda el valor mismo, por ejemplo 5. Una variable Libro guarda solo una flecha hacia el objeto (o null si no apunta a nada). El libro vive aparte, en el heap.
 
