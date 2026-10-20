@@ -14,4 +14,3 @@ error
 mensaje de error: Biblioteca.java:30: error: titulo has private access in Libro
         System.out.println(l1.titulo);^
 
-ETAPA 5
